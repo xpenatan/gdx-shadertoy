@@ -2,6 +2,7 @@ package com.xoppa.gdx.shadertoy;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -82,8 +83,13 @@ public class GdxShaderToy extends ApplicationAdapter {
 		logWindow = new CollapsableTextWindow("Log", 0, 0, w, 100f);
 		stage.addActor(logWindow);
 
-        final String defaultVS = "";
-		final String defaultFS = "";
+		String defaultVS = "";
+		String defaultFS = "";
+
+		FileHandle vert = Gdx.files.internal("shaders/default.vertex.glsl");
+		FileHandle frag = Gdx.files.internal("shaders/default.fragment.glsl");
+		defaultVS = vert.readString();
+		defaultFS = frag.readString();
 
 		vsWindow = new CollapsableTextWindow("Vertex Shader", 0, 100f, hw, h - 100f);
 		vsWindow.setText(defaultVS);
@@ -94,7 +100,7 @@ public class GdxShaderToy extends ApplicationAdapter {
 		fsWindow.addTextAreaListener(codeChangeListener);
 		stage.addActor(fsWindow);
 
-		//toy.setShader(defaultVS, defaultFS);
+		toy.setShader(defaultVS, defaultFS);
 	}
 
 	@Override

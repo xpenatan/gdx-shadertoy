@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        //maven { url "https://github.com/xpenatan/mvn-repo/raw/master/snapshots" }
         mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -28,6 +29,7 @@ allprojects {
     }
 
     repositories {
+        maven { url "https://github.com/xpenatan/mvn-repo/raw/master/snapshots" }
         mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -87,6 +89,15 @@ project(":html") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
         compile "com.kotcrab.vis:vis-ui:$visUIVersion:sources"
+    }
+}
+
+project(":dragome") {
+    apply plugin: "java"
+
+    dependencies {
+        compile project(":core")
+        compile "com.badlogicgames.gdx:gdx-backend-dragome:1.0.0-NIGHTLIES"
     }
 }
 

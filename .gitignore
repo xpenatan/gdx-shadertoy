@@ -20,6 +20,10 @@ gwt-unitCache/
 www-test/
 .gwt-tmp/
 
+## Dragome
+compiled-js/
+*.cache
+
 ## Android Studio and Intellij and Android in general
 android/libs/armeabi/
 android/libs/armeabi-v7a/

@@ -1,0 +1,7 @@
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.8
+
+webAppDirName  = 'webapp'
+
+sourceSets.main.java.srcDirs = ["src"]

@@ -22,6 +22,7 @@ www-test/
 
 ## Dragome
 compiled-js/
+dragome/webapp/assets
 *.cache
 
 ## Android Studio and Intellij and Android in general

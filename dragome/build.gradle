@@ -1,7 +1,20 @@
-apply plugin: 'jetty'
+apply plugin: 'org.akhikhl.gretty'
 
 sourceCompatibility = 1.8
 
-webAppDirName  = 'webapp'
+gretty {
+  extraResourceBase 'webapp'
+}
+
 
 sourceSets.main.java.srcDirs = ["src"]
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}

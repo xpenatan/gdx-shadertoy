@@ -28,7 +28,6 @@ allprojects {
     }
 
     repositories {
-        maven { url "https://github.com/xpenatan/mvn-repo/raw/master/snapshots" }
         mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -96,7 +95,7 @@ project(":dragome") {
 
     dependencies {
         compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-dragome:1.0.0-NIGHTLIES"
+        compile "com.github.xpenatan:gdx-backend-dragome:1.0.0-ALL-SNAPSHOT"
     }
 }
 

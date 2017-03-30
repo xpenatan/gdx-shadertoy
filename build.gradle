@@ -25,6 +25,8 @@ allprojects {
         ashleyVersion = '1.7.0'
         aiVersion = '1.8.0'
         visUIVersion = '1.2.5'
+        
+        gdxBackendDragomeVersion = '1.0.0-ALL-SNAPSHOT'
     }
 
     repositories {
@@ -95,7 +97,7 @@ project(":dragome") {
 
     dependencies {
         compile project(":core")
-        compile "com.github.xpenatan:gdx-backend-dragome:1.0.0-ALL-SNAPSHOT"
+        compile "com.github.xpenatan:gdx-backend-dragome:$gdxBackendDragomeVersion"
     }
 }
 
